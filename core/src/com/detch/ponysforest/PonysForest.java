@@ -6,6 +6,7 @@ import com.detch.ponysforest.gameController.GameController;
 public class PonysForest extends Game {
 
 	private GameController gc;
+
 	
 	@Override
 	public void create () {

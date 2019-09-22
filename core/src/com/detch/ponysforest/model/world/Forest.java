@@ -17,9 +17,9 @@ public class Forest {
         trees = new Texture("forest/trees.png");
     }
 
-    public void draw(SpriteBatch batch) {
-        batch.draw(background, 0, 0);
-        batch.draw(trees, 0, 0);
+    public void draw(SpriteBatch batch, int width, int height) {
+        batch.draw(background, 0, 0, width, height);
+        batch.draw(trees, 0, 0, width, height);
     }
 
     public Texture getBackground() {
