@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.detch.ponysforest.model.hero.Pony;
+import com.detch.ponysforest.service.AssetsManager;
 
 public class ForestLevel implements Screen {
 
@@ -20,7 +21,7 @@ public class ForestLevel implements Screen {
 
     @Override
     public void show() {
-        background = new Texture("forest/background.png");
+        background = AssetsManager.getForestTexture();
         pony = new Pony();
         camera = new OrthographicCamera();
         world = new World(new Vector2(20, 20), true);

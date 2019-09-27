@@ -1,15 +1,15 @@
 package com.detch.ponysforest.model.hero;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.detch.ponysforest.service.AssetsManager;
 
 public class Pony {
 
     private Sprite sprite;
 
-    public Pony(){
+    public Pony() {
         sprite = new Sprite();
-        sprite.setRegion(new Texture("pony/pony.png"));
+        sprite.setRegion(AssetsManager.getPonyTexture());
         sprite.setPosition(0, 0);
     }
 
