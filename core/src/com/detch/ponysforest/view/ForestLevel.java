@@ -3,7 +3,6 @@ package com.detch.ponysforest.view;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
@@ -20,7 +19,7 @@ public class ForestLevel implements Screen {
 
     private ForestController forestController;
     private Texture background;
-    private SpriteBatch batch;
+    private final SpriteBatch batch = new SpriteBatch();
     private Box2DDebugRenderer renderer;
     private World world;
     private Stage stage;
@@ -28,11 +27,16 @@ public class ForestLevel implements Screen {
     private Walls walls;
     private float y;
 
+    private final Vector2 EARTH_GRAVITY_VECTOR = new Vector2(0, -9.8f);
+
+    public ForestLevel(ForestController forestController) {
+        this.forestController = forestController;
+    }
+
     @Override
     public void show() {
-        forestController = new ForestController();
         background = AssetsManager.getForestTexture();
-        world = new World(new Vector2(0, -9.8f), true);
+        world = new World(EARTH_GRAVITY_VECTOR, true);
         y = 20/((float)Gdx.graphics.getWidth()/(float)Gdx.graphics.getHeight());
         renderer = new Box2DDebugRenderer();
         stage = new Stage(new FitViewport(20, y));
@@ -42,8 +46,6 @@ public class ForestLevel implements Screen {
         stage.addActor(pony);
         stage.addActor(walls);
         stage.setDebugAll(true);
-
-        batch = new SpriteBatch();
 
         System.out.println(y);
     }
@@ -62,7 +64,7 @@ public class ForestLevel implements Screen {
         stage.act(delta);
         stage.draw();
 
-        pony.getBody().applyForceToCenter(new Vector2(400, 0), true);
+        forestController.applyForceToCenter(pony);
         stage.getCamera().position.set(pony.getBody().getPosition().x, stage.getCamera().position.y, 0);
 
         if (Gdx.input.isTouched()) {
