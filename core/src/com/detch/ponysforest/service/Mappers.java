@@ -8,6 +8,7 @@ import com.detch.ponysforest.model.components.PonyComponent;
 import com.detch.ponysforest.model.components.PositionComponent;
 import com.detch.ponysforest.model.components.ShapeComponent;
 import com.detch.ponysforest.model.components.SpriteComponent;
+import com.detch.ponysforest.model.components.TextureComponent;
 
 public final class Mappers {
 
@@ -18,5 +19,6 @@ public final class Mappers {
     public static ComponentMapper<PositionComponent> positionMap = ComponentMapper.getFor(PositionComponent.class);
     public static ComponentMapper<ShapeComponent> shapeMap = ComponentMapper.getFor(ShapeComponent.class);
     public static ComponentMapper<SpriteComponent> spriteMap = ComponentMapper.getFor(SpriteComponent.class);
+    public static ComponentMapper<TextureComponent> textureMap = ComponentMapper.getFor(TextureComponent.class);
 
 }
