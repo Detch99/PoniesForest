@@ -43,6 +43,8 @@ public class RenderingSystem extends IteratingSystem {
             );
             spriteBatch.end();
         }
+
+        renderQueue.clear();
     }
 
     @Override
