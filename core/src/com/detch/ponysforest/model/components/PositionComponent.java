@@ -3,9 +3,7 @@ package com.detch.ponysforest.model.components;
 import com.badlogic.ashley.core.Component;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
 @Data
 public class PositionComponent implements Component {
 
