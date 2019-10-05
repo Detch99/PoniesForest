@@ -3,6 +3,7 @@ package com.detch.ponysforest;
 import com.badlogic.ashley.core.PooledEngine;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.detch.ponysforest.system.PhysicsSystem;
 import com.detch.ponysforest.system.RenderingSystem;
 import com.detch.ponysforest.view.ForestLevel;
 
@@ -21,6 +22,7 @@ public class PoniesForest extends Game {
 		spriteBatch = new SpriteBatch();
 		engine = new PooledEngine();
 		engine.addSystem(new RenderingSystem(spriteBatch));
+		engine.addSystem(new PhysicsSystem());
 		setScreen(new ForestLevel(this));
 	}
 }

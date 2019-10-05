@@ -14,10 +14,10 @@ import com.detch.ponysforest.service.Mappers;
 
 public class RenderingSystem extends IteratingSystem {
 
-    private SpriteBatch spriteBatch;
+    private final SpriteBatch spriteBatch;
 
-    private ComponentMapper<TextureComponent> textureMapper = Mappers.textureMap;
-    private ComponentMapper<PositionComponent> positionMapper = Mappers.positionMap;
+    private final ComponentMapper<TextureComponent> textureMapper = Mappers.textureMap;
+    private final ComponentMapper<PositionComponent> positionMapper = Mappers.positionMap;
 
     private final Array<Entity> renderQueue = new Array<>();
 

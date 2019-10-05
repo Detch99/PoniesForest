@@ -5,7 +5,7 @@ import com.badlogic.ashley.core.PooledEngine;
 
 public abstract class EntityFactory {
 
-    PooledEngine engine;
+    final PooledEngine engine;
 
     EntityFactory(PooledEngine engine) {
         this.engine = engine;
