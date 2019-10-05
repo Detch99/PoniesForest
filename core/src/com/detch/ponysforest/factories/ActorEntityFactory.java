@@ -1,4 +1,4 @@
-package com.detch.ponysforest.service;
+package com.detch.ponysforest.factories;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.PooledEngine;

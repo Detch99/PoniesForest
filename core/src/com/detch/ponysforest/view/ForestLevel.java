@@ -5,9 +5,9 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.World;
 import com.detch.ponysforest.PoniesForest;
-import com.detch.ponysforest.service.BackgroundEntityFactory;
-import com.detch.ponysforest.service.PonyEntityFactory;
-import com.detch.ponysforest.service.WallsEntityFactory;
+import com.detch.ponysforest.factories.BackgroundEntityFactory;
+import com.detch.ponysforest.factories.PonyEntityFactory;
+import com.detch.ponysforest.factories.WallsEntityFactory;
 import com.detch.ponysforest.system.PhysicsSystem;
 
 public class ForestLevel extends ScreenAdapter {

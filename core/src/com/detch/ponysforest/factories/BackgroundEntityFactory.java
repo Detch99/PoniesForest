@@ -1,9 +1,10 @@
-package com.detch.ponysforest.service;
+package com.detch.ponysforest.factories;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.PooledEngine;
 import com.detch.ponysforest.model.components.PositionComponent;
 import com.detch.ponysforest.model.components.TextureComponent;
+import com.detch.ponysforest.service.AssetsManager;
 
 public class BackgroundEntityFactory extends EntityFactory {
 

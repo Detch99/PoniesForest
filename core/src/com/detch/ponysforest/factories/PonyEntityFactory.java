@@ -1,4 +1,4 @@
-package com.detch.ponysforest.service;
+package com.detch.ponysforest.factories;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.PooledEngine;
@@ -10,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.detch.ponysforest.model.components.PonyComponent;
 import com.detch.ponysforest.model.hero.Pony;
+import com.detch.ponysforest.service.AssetsManager;
 
 public class PonyEntityFactory extends ActorEntityFactory {
 
