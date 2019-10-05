@@ -8,10 +8,8 @@ import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.detch.ponysforest.model.components.PonyComponent;
 import com.detch.ponysforest.model.components.WallsComponent;
 import com.detch.ponysforest.model.hero.Pony;
@@ -27,24 +25,19 @@ public class PhysicsSystem extends EntitySystem implements EntityListener {
 
     private World world;
     private Stage stage;
-    private Box2DDebugRenderer box2DDebugRenderer;
     private Pony pony;
 
     private final ComponentMapper<PonyComponent> ponyComponentMapper = Mappers.ponyMap;
     private final ComponentMapper<WallsComponent> wallsComponentMapper = Mappers.wallsMap;
 
-    private final Vector2 EARTH_GRAVITY_VECTOR = new Vector2(0, -9.8f);
     private final Vector2 FORCE_VECTOR = new Vector2(400, 0);
     private final Vector2 IMPULSE_VECTOR = new Vector2(0, 150);
     private final Vector2 POINT = new Vector2(new Vector2(0, 0));
     private final float BOX2D_UPDATE_STEP = 1 / 60f;
 
-    public PhysicsSystem() {
-        this.world = new World(EARTH_GRAVITY_VECTOR, true);
-        float y = 20 / ((float) Gdx.graphics.getWidth() / (float) Gdx.graphics.getHeight());
-        this.stage = new Stage(new FitViewport(20, y));
-        this.box2DDebugRenderer = new Box2DDebugRenderer();
-        this.stage.setDebugAll(true);
+    public PhysicsSystem(World world, Stage stage) {
+        this.world = world;
+        this.stage = stage;
     }
 
     @Override
@@ -56,9 +49,6 @@ public class PhysicsSystem extends EntitySystem implements EntityListener {
 
     @Override
     public void update(float deltaTime) {
-        super.update(deltaTime);
-
-        this.box2DDebugRenderer.render(this.world, this.stage.getCamera().combined);
         this.stage.act(deltaTime);
         this.stage.draw();
 
